@@ -1,6 +1,6 @@
 FROM centos AS build
 ADD https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz /opt
-RUN mv apache-maven-3.8.6-bin.tar.gz /opt/maven
+RUN mv apache-maven-3.8.6-bin /opt/maven
 WORKDIR /opt/maven/bin/mvn clean package
 
 FROM tomcat
