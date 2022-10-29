@@ -4,8 +4,8 @@ pipeline{
         stage("image build"){
             steps{
                 sh '''
-                docker build -t tomcat:1 .
-                docker images
+                sudo docker build -t tomcat:1 .
+                sudo docker images
                 '''
             }
         }
