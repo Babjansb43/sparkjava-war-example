@@ -3,7 +3,7 @@ ADD https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin
 WORKDIR /opt
 RUN tar -zxvf apache-maven-3.8.6-bin.tar.gz
 RUN mv apache-maven-3.8.6 maven38
-RUN /opt/maven38/bin/mvn clean package
+WORKDIR /opt/maven38/bin/mvn clean package
 COPY . .
 
 FROM tomcat
