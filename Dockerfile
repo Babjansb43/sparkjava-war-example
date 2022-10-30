@@ -6,5 +6,5 @@ RUN mv apache-maven-3.8.6 maven38
 WORKDIR /opt/maven38/bin/mvn clean package
 COPY . .
 
-FROM tomcat
+FROM tomcat:8.5.43-jdk8
 COPY --from=build /var/lib/jenkins/worksapce/target/*.war /usr/local/tomcat/webapps
