@@ -11,5 +11,11 @@ pipeline{
                 '''
             }
         }
+        stage("image deploy"){
+            steps{
+                cd k8s/
+                kubectl apply -f *
+            }
+        }
     }
 }
