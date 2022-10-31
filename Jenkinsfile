@@ -13,8 +13,11 @@ pipeline{
         }
         stage("image deploy"){
             steps{
+                sh '''
                 cd k8s/
                 kubectl apply -f *
+                kubectl get svc -n springjava
+                '''
             }
         }
     }
