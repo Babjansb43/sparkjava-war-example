@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springjava-deployment
+  namespace: springjava
+spec:
+  selector:
+    matchLabels:
+      app: springjava
+  replicas: 5 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: springjava
+    spec:
+      containers:
+      - name: tomcat
+        image: 301712948359.dkr.ecr.ap-southeast-1.amazonaws.com/springjava:$BUILD_NUMBER
+        ports:
+        - containerPort: 8080

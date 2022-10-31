@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springjava-service
+  namespace: springjava
+spec:
+  selector:
+    app: springjava
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
