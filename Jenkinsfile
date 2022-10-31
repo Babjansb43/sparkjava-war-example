@@ -15,7 +15,8 @@ pipeline{
             steps{
                 sh '''
                 cd k8s/
-                kubectl apply -f * -n springjava
+                kubectl apply -f deployment.yaml -n springjava
+                kubectl apply -f service.yaml -n springjava
                 kubectl get svc -n springjava
                 '''
             }
