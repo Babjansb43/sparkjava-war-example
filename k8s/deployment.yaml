@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: tomcat
-        image: 301712948359.dkr.ecr.ap-southeast-1.amazonaws.com/springjava:$BUILD_NUMBER
+        image: 301712948359.dkr.ecr.ap-southeast-1.amazonaws.com/springjava:11
         ports:
         - containerPort: 8080
