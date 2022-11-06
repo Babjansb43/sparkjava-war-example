@@ -18,5 +18,5 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.ta
 RUN tar -zxvf apache-tomcat-9.0.68.tar.gz && rm -rf apache-tomcat-9.0.68.tar.gz
 RUN mv apache-tomcat-9.0.68 tomcat9
 RUN chmod 755 /opt/tomcat9/bin/*.sh
-COPY --from=build /app/source/target/*.war /usr/local/tomcat/webapps
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+COPY --from=build /app/source/target/*.war /opt/tomcat9/webapps
+CMD ["/opt/tomcat9/bin/catalina.sh", "run"]
