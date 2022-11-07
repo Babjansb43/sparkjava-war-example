@@ -4,7 +4,7 @@ COPY . /app/source
 RUN apt update -y &&  apt install default-jdk -y
 ADD https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz /opt
 WORKDIR /opt
-RUN tar -zxvf apache-maven-3.8.6-bin.tar.gz && RUN mv apache-maven-3.8.6 maven38
+RUN tar -zxvf apache-maven-3.8.6-bin.tar.gz && mv apache-maven-3.8.6 maven38
 WORKDIR /app/source
 RUN /opt/maven38/bin/mvn clean package
 
