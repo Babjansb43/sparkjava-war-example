@@ -16,6 +16,6 @@ RUN curl https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db
 RUN tar -xzf openjdk-15.0.2_linux-x64_bin.tar.gz && rm -rf openjdk-15.0.2_linux-x64_bin.tar.gz
 WORKDIR /opt
 ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz /opt
-RUN tar -zxvf apache-tomcat-9.0.68.tar.gz && rm -rf apache-tomcat-9.0.68.tar.gz && RUN mv apache-tomcat-9.0.68 tomcat9 && RUN chmod 755 /opt/tomcat9/bin/*.sh
+RUN tar -zxvf apache-tomcat-9.0.68.tar.gz && rm -rf apache-tomcat-9.0.68.tar.gz && mv apache-tomcat-9.0.68 tomcat9 && chmod 755 /opt/tomcat9/bin/*.sh
 COPY --from=build /app/source/target/*.war /opt/tomcat9/webapps
 CMD ["/opt/tomcat9/bin/catalina.sh", "run"]
